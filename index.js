@@ -20,7 +20,6 @@ window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 40);
     }
     
-    // Back to top visibility
     const backBtn = document.getElementById('backToTop');
     if (backBtn) {
         backBtn.classList.toggle('show', window.scrollY > 300);
@@ -38,7 +37,6 @@ if (menuToggle && navLinks) {
         navLinks.classList.toggle('mobile-open');
     });
 
-    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('mobile-open');
@@ -69,7 +67,7 @@ if (fadeElements.length > 0) {
 function showToast(message) {
     const toast = document.getElementById('toastMsg');
     if (toast) {
-        toast.textContent = message || "✨ Message received. We'll respond shortly.";
+        toast.textContent = message || "✨ Subscribed successfully!";
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 3000);
     }
@@ -104,7 +102,6 @@ function closeModal() {
     }
 }
 
-// Close modal on backdrop click
 const modalOverlay = document.getElementById('comingSoonModal');
 if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
@@ -112,25 +109,24 @@ if (modalOverlay) {
     });
 }
 
-// Close modal with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
 });
 
 // ============================================
-// CONTACT FORM SUBMISSION
+// UPDATES FORM SUBMISSION
 // ============================================
-const contactForm = document.getElementById('contactForm');
+const updatesForm = document.getElementById('updatesForm');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+if (updatesForm) {
+    updatesForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const btn = document.getElementById('submitBtn');
         if (!btn) return;
         
         const originalHTML = btn.innerHTML;
-        btn.innerHTML = '<span class="spinner"></span> Sending...';
+        btn.innerHTML = '<span class="spinner"></span> Subscribing...';
         btn.disabled = true;
         
         const nameInput = document.getElementById('fullName');
@@ -139,8 +135,8 @@ if (contactForm) {
         setTimeout(() => {
             btn.innerHTML = originalHTML;
             btn.disabled = false;
-            showToast(`Thank you, ${name || 'guest'}. We'll respond shortly.`);
-            contactForm.reset();
+            showToast(`Thank you, ${name || 'guest'}! You're now subscribed.`);
+            updatesForm.reset();
         }, 1200);
     });
 }
@@ -163,7 +159,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ============================================
 // EXPOSE FUNCTIONS TO GLOBAL SCOPE
-// (For inline onclick handlers in HTML)
 // ============================================
 window.openModal = openModal;
 window.closeModal = closeModal;
