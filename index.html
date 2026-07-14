@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>MiRaCuLoUs Travels | Experiences that last a lifetime</title>
+    <title>MiRaCuLoUs | Travel, Investment &amp; Insights</title>
     
-    <!-- Google Fonts: Elegant serif + clean sans -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- CSS VARIABLES (Best from both) --- */
+        /* --- CSS VARIABLES --- */
         :root {
             --deep-blue: #0a2540;
             --royal-blue: #1c3e6c;
@@ -40,15 +40,15 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .logo, .testimonial-text { font-family: 'Playfair Display', serif; font-weight: 700; }
+        h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
 
-        /* --- Custom Scrollbar (Gold accent) --- */
+        /* --- Custom Scrollbar --- */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 4px; }
         ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #b3862f; }
 
-        /* --- PRELOADER (From winning design) --- */
+        /* --- PRELOADER --- */
         #preloader {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -77,7 +77,7 @@
         @keyframes loadLine { to { width: 100px; } }
         @keyframes fadeInLoader { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- NAVIGATION (Improved from both) --- */
+        /* --- NAVIGATION --- */
         .navbar {
             position: fixed;
             top: 0;
@@ -105,25 +105,24 @@
             color: transparent;
             letter-spacing: -0.3px;
         }
-        .logo span {
-            background: linear-gradient(135deg, var(--gold), #f5d78c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
         }
-        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
         .nav-links li a {
             text-decoration: none;
             font-weight: 500;
             color: white;
             transition: 0.25s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             position: relative;
         }
         .nav-links li a::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -6px;
             left: 0;
             width: 0;
             height: 2px;
@@ -134,7 +133,7 @@
         .nav-links li a:hover { color: var(--gold); }
         .btn-nav {
             background: var(--gold);
-            padding: 0.5rem 1.3rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 40px;
             color: var(--deep-blue) !important;
             font-weight: 700;
@@ -160,11 +159,11 @@
             transition: width 0.1s;
         }
 
-        /* --- HERO SECTION (Best cinematic from first design) --- */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
             height: 100vh;
-            min-height: 800px;
+            min-height: 700px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -203,85 +202,27 @@
             letter-spacing: 2px;
         }
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             line-height: 1.2;
             color: white;
             text-shadow: 0 2px 15px rgba(0,0,0,0.3);
             margin-bottom: 1.2rem;
         }
         .hero h1 span { color: var(--gold-light); border-bottom: 2px solid var(--gold); }
-        .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
-
-        /* --- SEARCH WIDGET (Premium touch from first design) --- */
-        .search-widget {
-            position: relative;
-            z-index: 3;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 1.5rem;
-            width: 100%;
-            max-width: 900px;
-            margin-top: 2rem;
-            animation: fadeUpHero 1s ease-out 0.3s forwards;
-            opacity: 0;
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .search-tabs {
+        .hero-buttons {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 0.5rem;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        .tab-btn {
-            background: none;
-            border: none;
-            color: rgba(255,255,255,0.7);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            padding-bottom: 5px;
-            transition: 0.3s;
-        }
-        .tab-btn.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
-        .search-inputs { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .input-group {
-            flex: 1;
-            min-width: 150px;
-            position: relative;
-        }
-        .input-group i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gold);
-        }
-        .input-group input {
-            width: 100%;
-            padding: 14px 14px 14px 45px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.15);
-            color: white;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-        }
-        .input-group input::placeholder { color: rgba(255,255,255,0.6); }
-        .input-group input:focus { background: rgba(255,255,255,0.25); border-color: var(--gold); }
-        .search-btn {
-            padding: 14px 30px;
-            border-radius: 12px;
-            border: none;
-            background: var(--gold);
-            color: var(--deep-blue);
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .search-btn:hover { background: var(--gold-light); transform: scale(1.02); }
 
         /* --- Container & Sections --- */
         .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
@@ -304,54 +245,89 @@
             background: linear-gradient(90deg, var(--gold), var(--gold-light));
             border-radius: 3px;
         }
+        .section-subtitle {
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            font-size: 1rem;
+        }
 
-        /* --- Cards Grid (Black Boxes with 3D Tilt) --- */
-        .cards-grid {
+        /* --- SERVICES CARDS (Travel, Investment, Blog) --- */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 1.5rem;
-            perspective: 1000px;
         }
-        .premium-card {
-            background: #111;
+        .service-card {
+            background: var(--white);
             border-radius: 24px;
             overflow: hidden;
-            position: relative;
-            aspect-ratio: 4 / 3;
             box-shadow: var(--card-shadow);
-            transition: transform 0.1s ease-out;
-            transform-style: preserve-3d;
+            transition: all 0.4s ease;
             cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.03);
         }
-        .premium-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.65);
-            transition: filter 0.4s, transform 0.5s;
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
         }
-        .premium-card:hover img {
-            filter: brightness(0.8);
-            transform: scale(1.05);
+        .service-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
-        .card-overlay {
+        .service-icon-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem 1.8rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-            color: white;
+            bottom: -25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-blue);
+            font-size: 1.4rem;
+            box-shadow: 0 8px 20px rgba(201, 160, 61, 0.3);
         }
-        .card-overlay h3 { font-size: 1.9rem; color: var(--gold); margin-bottom: 0.4rem; }
+        .service-content { padding: 2rem 1.8rem 1.8rem; }
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-blue);
+        }
+        .service-content p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .service-link {
+            display: inline-block;
+            margin-top: 1.2rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .service-link i { transition: 0.2s; }
+        .service-link:hover i { transform: translateX(5px); }
 
-        /* --- Testimonials Section --- */
+        /* --- TESTIMONIALS (Simplified, no stars) --- */
         .testimonials-section {
-            background: linear-gradient(115deg, var(--white) 0%, var(--gold-soft) 100%);
+            background: var(--deep-blue);
             border-radius: 40px;
             margin: 3rem 1.5rem;
             padding: 4rem 2rem;
+            color: var(--white);
+        }
+        .testimonials-section .section-header h2 {
+            color: var(--white);
+        }
+        .testimonials-section .section-header h2:after {
+            background: var(--gold);
         }
         .testimonial-grid {
             display: grid;
@@ -361,84 +337,95 @@
             margin: 0 auto;
         }
         .testimonial-card {
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.06);
             backdrop-filter: blur(4px);
             padding: 2rem;
-            border-radius: 28px;
+            border-radius: 24px;
             text-align: center;
-            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255,255,255,0.06);
             transition: 0.3s;
         }
-        .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--hover-shadow); }
+        .testimonial-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+        }
         .testimonial-text {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
             margin-bottom: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
         }
-        .testimonial-author { font-weight: 700; color: var(--gold); }
-        .star-rating { color: var(--gold); margin-bottom: 1rem; }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 0.95rem;
+        }
+        .testimonial-title {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2px;
+        }
 
-        /* --- News Section --- */
-        .news-section {
-            background-color: var(--white);
-            border-radius: 40px;
-            padding: 4rem 2rem;
-            margin: 3rem 1rem;
-            box-shadow: var(--card-shadow);
-        }
-        .news-grid {
+        /* --- BLOG PREVIEW --- */
+        .blog-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-        .news-card {
-            background: #fff;
+        .blog-card {
+            background: var(--white);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
         }
-        .news-card:hover { transform: translateY(-8px); box-shadow: var(--hover-shadow); }
-        .news-img {
-            height: 220px;
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--hover-shadow);
+        }
+        .blog-image {
+            height: 200px;
             background-size: cover;
             background-position: center;
             position: relative;
         }
-        .news-tag {
+        .blog-tag {
             position: absolute;
-            bottom: 15px; left: 15px;
+            top: 15px;
+            left: 15px;
             background: var(--gold);
             padding: 4px 14px;
             border-radius: 40px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: var(--deep-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .news-content { padding: 1.5rem; }
-        .news-date {
+        .blog-content { padding: 1.5rem; }
+        .blog-date {
             font-size: 0.75rem;
             color: var(--gold);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             display: block;
         }
-        .news-content h4 { font-size: 1.2rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
-        .read-link {
-            text-decoration: none;
-            font-weight: 600;
-            color: var(--royal-blue);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 1rem;
-            transition: 0.2s;
+        .blog-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
         }
-        .read-link:hover { color: var(--gold); gap: 12px; }
+        .blog-content p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
 
-        /* --- CONTACT SECTION (REDESIGNED - Premium & Visually Pleasing) --- */
+        /* --- CONTACT SECTION --- */
         .contact-wrapper {
             background: var(--white);
             border-radius: 32px;
@@ -456,7 +443,6 @@
             position: relative;
             overflow: hidden;
         }
-        /* Decorative gold accent on contact side */
         .contact-info-side::before {
             content: '';
             position: absolute;
@@ -466,8 +452,6 @@
             height: 100%;
             background: linear-gradient(180deg, var(--gold), var(--gold-light));
         }
-        
-        /* Contact Header Styling */
         .contact-header {
             margin-bottom: 2rem;
             padding-bottom: 1rem;
@@ -484,8 +468,6 @@
             opacity: 0.7;
             line-height: 1.4;
         }
-        
-        /* Enhanced Contact Items with better visual hierarchy */
         .contact-details {
             display: flex;
             flex-direction: column;
@@ -498,9 +480,7 @@
             gap: 1.2rem;
             transition: transform 0.2s ease;
         }
-        .contact-item:hover {
-            transform: translateX(5px);
-        }
+        .contact-item:hover { transform: translateX(5px); }
         .contact-icon {
             width: 52px;
             height: 52px;
@@ -516,17 +496,13 @@
             background: var(--gold);
             border-color: var(--gold);
         }
-        .contact-item:hover .contact-icon i {
-            color: var(--deep-blue);
-        }
+        .contact-item:hover .contact-icon i { color: var(--deep-blue); }
         .contact-icon i {
             font-size: 1.3rem;
             color: var(--gold);
             transition: color 0.3s;
         }
-        .contact-text {
-            flex: 1;
-        }
+        .contact-text { flex: 1; }
         .contact-label {
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -541,7 +517,6 @@
             font-weight: 500;
             color: white;
             text-decoration: none;
-            transition: color 0.2s;
             display: inline-block;
         }
         .contact-value a {
@@ -549,25 +524,14 @@
             text-decoration: none;
             transition: color 0.2s;
         }
-        .contact-value a:hover {
-            color: var(--gold);
-        }
-        
-        /* Gold highlight number/email */
+        .contact-value a:hover { color: var(--gold); }
         .contact-value.highlight {
             font-size: 1.1rem;
             font-weight: 600;
             letter-spacing: 0.3px;
         }
-        .contact-value.highlight a {
-            color: var(--gold-light);
-        }
-        .contact-value.highlight a:hover {
-            color: var(--gold);
-            text-decoration: underline;
-        }
-        
-        /* Response badge */
+        .contact-value.highlight a { color: var(--gold-light); }
+        .contact-value.highlight a:hover { color: var(--gold); text-decoration: underline; }
         .response-badge {
             background: rgba(201, 160, 61, 0.12);
             border-radius: 30px;
@@ -576,16 +540,10 @@
             text-align: center;
             border: 1px solid rgba(201, 160, 61, 0.25);
         }
-        .response-badge i {
-            color: var(--gold);
-            margin-right: 0.5rem;
-        }
-        .response-badge span {
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
+        .response-badge i { color: var(--gold); margin-right: 0.5rem; }
+        .response-badge span { font-size: 0.8rem; font-weight: 500; }
 
-        /* Form styles remain unchanged */
+        /* Form */
         .form-group { margin-bottom: 1.5rem; }
         .form-input {
             width: 100%;
@@ -616,6 +574,88 @@
             gap: 10px;
         }
         .btn-gold:hover { background: #e2b13b; transform: translateY(-3px); box-shadow: var(--gold-shadow); }
+        .btn-outline-gold {
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+        }
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: var(--deep-blue);
+        }
+
+        /* --- "COMING SOON" MODAL --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 37, 64, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeInModal 0.4s ease;
+        }
+        .modal-overlay.active { display: flex; }
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .modal-content {
+            background: var(--white);
+            border-radius: 40px;
+            padding: 3.5rem 3rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 40px 60px rgba(0,0,0,0.3);
+        }
+        .modal-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .modal-content h2 {
+            font-size: 2.2rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.5rem;
+        }
+        .modal-content h2 span { color: var(--gold); }
+        .modal-content p {
+            color: var(--gray-text);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .modal-close-btn {
+            background: var(--gold);
+            border: none;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--deep-blue);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal-close-btn:hover { background: #b3862f; transform: scale(1.02); }
+        .modal-sparkle {
+            position: absolute;
+            font-size: 1.2rem;
+            color: var(--gold);
+            opacity: 0.3;
+        }
+        .modal-sparkle:nth-child(1) { top: 20px; right: 30px; }
+        .modal-sparkle:nth-child(2) { bottom: 20px; left: 30px; }
+        .modal-sparkle:nth-child(3) { top: 50%; right: 15px; }
 
         /* --- Footer --- */
         footer {
@@ -658,7 +698,11 @@
             z-index: 999;
             animation: pulse 2s infinite;
         }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201, 160, 61, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(201, 160, 61, 0); } 100% { box-shadow: 0 0 0 0 rgba(201, 160, 61, 0); } }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(201, 160, 61, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(201, 160, 61, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 160, 61, 0); }
+        }
         .chat-bubble:hover { transform: scale(1.1); background: #b3862f; }
 
         .back-to-top {
@@ -693,7 +737,6 @@
             white-space: nowrap;
         }
         .toast-msg.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
         .spinner {
             width: 20px; height: 20px;
             border: 2px solid var(--deep-blue);
@@ -706,7 +749,9 @@
 
         /* --- Responsive --- */
         @media (max-width: 900px) {
-            .cards-grid, .news-grid, .testimonial-grid { grid-template-columns: 1fr; }
+            .services-grid, .blog-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
             .contact-wrapper { flex-direction: column; }
             .footer-grid { flex-direction: column; }
             .hero h1 { font-size: 2.2rem; }
@@ -718,8 +763,11 @@
                 background: rgba(10,37,64,0.98); backdrop-filter: blur(12px);
                 padding: 2rem; gap: 1.5rem; text-align: center;
             }
-            .hero { background-attachment: scroll; height: auto; min-height: 700px; padding: 120px 0 60px; }
-            .search-inputs { flex-direction: column; }
+            .hero { background-attachment: scroll; height: auto; min-height: 600px; padding: 120px 0 60px; }
+            .testimonials-section { margin: 2rem 1rem; padding: 2.5rem 1.5rem; }
+            .modal-content { padding: 2.5rem 1.5rem; }
+            .modal-content h2 { font-size: 1.8rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
         }
         @media (min-width: 768px) { .hero h1 { font-size: 4rem; } }
         @media (min-width: 1024px) { .hero h1 { font-size: 4.8rem; } }
@@ -740,15 +788,16 @@
 
     <header>
         <nav class="navbar" id="navbar">
-            <div class="logo">MiRaCuLoUs <span>Travels</span></div>
+            <div class="logo">MiRaCuLoUs</div>
             <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#destinations">Experiences</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#news">Insights</a></li>
+                <li><a href="#services">Travels</a></li>
+                <li><a href="#services">Investment</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#book" class="btn-nav">Book Now</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact" class="btn-nav">Get Started</a></li>
             </ul>
         </nav>
         <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
@@ -758,133 +807,187 @@
         <!-- HERO SECTION -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="hero-badge"><i class="fas fa-crown"></i> Beside Extraordinary</div>
-                <h1>Everything About Travels With <span>MiRaCuLoUs</span></h1>
-                <p>Assembled travel choices for the discerning traveler — private aviation, ultra-luxe hideaways, and 24/7 dedicated support.</p>
-                <button class="btn-gold" onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">Explore Collections <i class="fas fa-arrow-right"></i></button>
-            </div>
-
-            <!-- Search Widget -->
-            <div class="search-widget">
-                <div class="search-tabs">
-                    <button class="tab-btn active"><i class="fas fa-plane"></i> Flights</button>
-                    <button class="tab-btn"><i class="fas fa-hotel"></i> Hotels</button>
-                    <button class="tab-btn"><i class="fas fa-passport"></i> Visas</button>
+                <div class="hero-badge"><i class="fas fa-compass"></i> Experiences that last a lifetime</div>
+                <h1>Travel, Invest &amp; <span>Grow</span> with MiRaCuLoUs</h1>
+                <p>Your trusted partner for luxury travel, smart investment consultations, and expert insights — all in one place.</p>
+                <div class="hero-buttons">
+                    <button class="btn-gold" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-gold btn-outline-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to an Expert</button>
                 </div>
-                <form id="searchForm" onsubmit="event.preventDefault(); showToast('Searching exclusive inventory...');">
-                    <div class="search-inputs">
-                        <div class="input-group"><i class="fas fa-map-marker-alt"></i><input type="text" placeholder="Where to?"></div>
-                        <div class="input-group"><i class="fas fa-calendar-alt"></i><input type="date"></div>
-                        <div class="input-group"><i class="fas fa-user-friends"></i><input type="number" placeholder="Guests" min="1" value="1"></div>
-                        <button type="submit" class="search-btn">Search</button>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION: Travel, Investment, Blog -->
+        <section id="services" class="container" style="padding-top: 4rem;">
+            <div class="section-header fade-up">
+                <h2>What We Offer</h2>
+                <p class="section-subtitle">Three pillars of excellence — curated travel, strategic investment, and expert knowledge</p>
+            </div>
+            <div class="services-grid fade-up">
+                <!-- Travel Service -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.pexels.com/photos/2860701/pexels-photo-2860701.jpeg?auto=compress&cs=tinysrgb&w=800');">
+                        <div class="service-icon-overlay"><i class="fas fa-plane-departure"></i></div>
                     </div>
-                </form>
+                    <div class="service-content">
+                        <h3>Travel Agency</h3>
+                        <p>Luxury travel experiences tailored to your taste. Private jets, ultra-luxe hideaways, and seamless global journeys.</p>
+                        <a href="#" class="service-link" onclick="openModal(); return false;">Discover Travel <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Investment Service -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.pexels.com/photos/5668860/pexels-photo-5668860.jpeg?auto=compress&cs=tinysrgb&w=800');">
+                        <div class="service-icon-overlay"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Investment Consultations</h3>
+                        <p>Strategic investment advice for high-net-worth individuals. Grow your wealth with expert guidance.</p>
+                        <a href="#" class="service-link" onclick="openModal(); return false;">Explore Investments <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog Service -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800');">
+                        <div class="service-icon-overlay"><i class="fas fa-pen-fancy"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Expert Blog</h3>
+                        <p>Insightful articles on travel trends, investment strategies, and lifestyle tips from our team of experts.</p>
+                        <a href="#" class="service-link" onclick="openModal(); return false;">Read Our Blog <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- EXPERIENCES CARDS -->
-        <div class="container" id="destinations">
-            <div class="section-header fade-up"><h2>Escape to Unique Destinations</h2></div>
-            <div class="cards-grid fade-up">
-                <div class="premium-card"><img src="https://images.pexels.com/photos/2860701/pexels-photo-2860701.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Private Aviation"><div class="card-overlay"><h3>Great Locationss</h3><p>Global charter & empty legs</p></div></div>
-                <div class="premium-card"><img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Luxury Hotels"><div class="card-overlay"><h3>Grand Residences</h3><p>Presidential & Villa collection</p></div></div>
-                <div class="premium-card"><img src="https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Concierge"><div class="card-overlay"><h3>White-Glove Service</h3><p>24/7 dedicated concierge</p></div></div>
+        <!-- ABOUT SECTION (Simplified) -->
+        <section id="about" class="container" style="padding: 3rem 0;">
+            <div class="section-header fade-up">
+                <h2>About MiRaCuLoUs</h2>
+                <p class="section-subtitle">Your gateway to extraordinary experiences and expert guidance</p>
             </div>
-        </div>
+            <div style="max-width: 850px; margin: 0 auto; text-align: center; padding: 1rem 0;">
+                <p style="font-size: 1.05rem; color: var(--gray-text); line-height: 1.8; margin-bottom: 1.5rem;">
+                    MiRaCuLoUs is a premier lifestyle and investment consultancy dedicated to serving discerning individuals who value excellence. We combine luxury travel planning with strategic investment advice, backed by a team of industry experts.
+                </p>
+                <p style="font-size: 1.05rem; color: var(--gray-text); line-height: 1.8;">
+                    Our blog serves as a knowledge hub, offering curated insights to help you make informed decisions — whether you're planning your next journey or growing your portfolio.
+                </p>
+            </div>
+        </section>
 
-        <!-- TESTIMONIALS -->
+        <!-- TESTIMONIALS (Simplified, no stars) -->
         <section id="testimonials" class="testimonials-section fade-up">
-            <div class="section-header"><h2>Our clients say</h2></div>
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+            </div>
             <div class="testimonial-grid">
-                <div class="testimonial-card"><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Absolutely flawless. MiRaCuLoUs exceeded every expectation."</p><p class="testimonial-author">— Michael Olatunji</p></div>
-                <div class="testimonial-card"><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Response time is super fast, even at midnight. That's what I call premium service."</p><p class="testimonial-author">— Adam Kshel, CEO GLIIMU LTD</p></div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Absolutely flawless. MiRaCuLoUs exceeded every expectation. From seamless travel arrangements to expert investment advice, they deliver premium value."</p>
+                    <p class="testimonial-author">— Michael Olatunji</p>
+                    <p class="testimonial-title">Serial Entrepreneur, Lagos</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Their response time is super fast — even at midnight. That's what I call premium service. They truly understand what high-net-worth individuals need."</p>
+                    <p class="testimonial-author">— Adam Kshel</p>
+                    <p class="testimonial-title">CEO, GLIIMU LTD</p>
+                </div>
             </div>
         </section>
 
-        <!-- LATEST NEWS -->
-        <div class="container" id="news">
-            <div class="section-header fade-up"><h2>Latest Travel News</h2></div>
-            <div class="news-grid fade-up">
-                <div class="news-card"><div class="news-img" style="background-image: url('https://images.pexels.com/photos/1676987/pexels-photo-1676987.jpeg?auto=compress&cs=tinysrgb&w=800');"><div class="news-tag">NEW ROUTES</div></div><div class="news-content"><span class="news-date"><i class="far fa-calendar-alt"></i> May 10, 2026</span><h4>Supersonic Returns</h4><p>Exclusive pre-release seats available.</p><a href="#" class="read-link">Read briefing <i class="fas fa-chevron-right"></i></a></div></div>
-                <div class="news-card"><div class="news-img" style="background-image: url('https://images.pexels.com/photos/2412566/pexels-photo-2412566.jpeg?auto=compress&cs=tinysrgb&w=800');"><div class="news-tag">SANCTUARIES</div></div><div class="news-content"><span class="news-date"><i class="far fa-calendar-alt"></i> April 22, 2026</span><h4>Top 10 Private Islands</h4><p>Curated for absolute discretion.</p><a href="#" class="read-link">Discover islands <i class="fas fa-chevron-right"></i></a></div></div>
-                <div class="news-card"><div class="news-img" style="background-image: url('https://images.pexels.com/photos/4245827/pexels-photo-4245827.jpeg?auto=compress&cs=tinysrgb&w=800');"><div class="news-tag">INSIGHTS</div></div><div class="news-content"><span class="news-date"><i class="far fa-calendar-alt"></i> April 5, 2026</span><h4>2026 Luxury Trends</h4><p>How the elite redefine travel.</p><a href="#" class="read-link">Read report <i class="fas fa-chevron-right"></i></a></div></div>
+        <!-- BLOG PREVIEW SECTION -->
+        <section id="blog" class="container" style="padding: 4rem 0;">
+            <div class="section-header fade-up">
+                <h2>From Our Blog</h2>
+                <p class="section-subtitle">Expert insights on travel, investment, and lifestyle</p>
             </div>
-        </div>
+            <div class="blog-grid fade-up">
+                <div class="blog-card" onclick="openModal();">
+                    <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/1676987/pexels-photo-1676987.jpeg?auto=compress&cs=tinysrgb&w=800');">
+                        <span class="blog-tag">Travel</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> June 10, 2026</span>
+                        <h4>Top 10 Destinations for 2026</h4>
+                        <p>Discover the most sought-after travel destinations for the discerning traveler this year.</p>
+                    </div>
+                </div>
+                <div class="blog-card" onclick="openModal();">
+                    <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/7413918/pexels-photo-7413918.jpeg?auto=compress&cs=tinysrgb&w=800');">
+                        <span class="blog-tag">Investment</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> June 5, 2026</span>
+                        <h4>Smart Investment Strategies</h4>
+                        <p>How high-net-worth individuals are diversifying portfolios in 2026.</p>
+                    </div>
+                </div>
+                <div class="blog-card" onclick="openModal();">
+                    <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800');">
+                        <span class="blog-tag">Lifestyle</span>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> May 28, 2026</span>
+                        <h4>The Art of Luxury Living</h4>
+                        <p>Curated insights on premium experiences and elevated lifestyle choices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- CONTACT SECTION - REDESIGNED -->
+        <!-- CONTACT SECTION -->
         <div class="container" id="contact">
-            <div class="section-header fade-up"><h2>Contact MiRaCuLoUs</h2></div>
+            <div class="section-header fade-up"><h2>Get in Touch</h2></div>
             <div class="contact-wrapper fade-up">
                 <div class="contact-form-side">
                     <form id="contactForm">
                         <div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required id="fullName"></div>
                         <div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required id="emailContact"></div>
-                        <div class="form-group"><textarea rows="3" class="form-input" style="border-radius:20px;" placeholder="Your request (we reply in < 2h)"></textarea></div>
-                        <button type="submit" class="btn-gold" style="width:100%; justify-content:center;" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Priority Message</button>
-                        <p style="font-size:0.7rem; margin-top:1rem; text-align:center;"><i class="fas fa-clock"></i> Response within 2 hours — 24/7 global team</p>
+                        <div class="form-group"><textarea rows="3" class="form-input" style="border-radius:20px;" placeholder="How can we help? (we reply in < 2h)"></textarea></div>
+                        <button type="submit" class="btn-gold" style="width:100%; justify-content:center;" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <p style="font-size:0.7rem; margin-top:1rem; text-align:center;"><i class="fas fa-clock"></i> Response within 2 hours — 24/7 support</p>
                     </form>
                 </div>
                 <div class="contact-info-side">
                     <div class="contact-header">
-                        <h3>Quality Support</h3>
-                        <p>Our dedicated team is available 24/7 to assist with your travel needs.</p>
+                        <h3>Let's Connect</h3>
+                        <p>Reach out to our team for travel planning, investment consultations, or general inquiries.</p>
                     </div>
-                    
                     <div class="contact-details">
-                        <!-- Phone - highlighted with gold -->
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                             <div class="contact-text">
-                                <span class="contact-label">24/7 CALL LINE</span>
-                                <div class="contact-value highlight">
-                                    <a href="tel:+2347063737085">+234 706 3737 085</a>
-                                </div>
+                                <span class="contact-label">24/7 Hotline</span>
+                                <div class="contact-value highlight"><a href="tel:+2347063737085">+234 706 3737 085</a></div>
                             </div>
                         </div>
-                        
-                        <!-- Email - highlighted with gold -->
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                             <div class="contact-text">
-                                <span class="contact-label">QUICK RESPONSE EMAIL</span>
-                                <div class="contact-value highlight">
-                                    <a href="mailto:mmiraculous42@gmail.com">mmiraculous42@gmail.com</a>
-                                </div>
+                                <span class="contact-label">Email Us</span>
+                                <div class="contact-value highlight"><a href="mailto:mmiraculous42@gmail.com">mmiraculous42@gmail.com</a></div>
                             </div>
                         </div>
-                        
-                        <!-- WhatsApp -->
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                             <div class="contact-text">
-                                <span class="contact-label">WHATSAPP MESSAGING</span>
-                                <div class="contact-value">
-                                    <a href="https://wa.me/2347063737085" target="_blank">+234 706 3737 085</a>
-                                </div>
+                                <span class="contact-label">WhatsApp</span>
+                                <div class="contact-value"><a href="https://wa.me/2347063737085" target="_blank">+234 706 3737 085</a></div>
                             </div>
                         </div>
-                        
-                        <!-- Location -->
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="contact-text">
-                                <span class="contact-label">GLOBAL HEADQUARTERS</span>
-                                <div class="contact-value">Suite 307 Aula Plaza | Opposite Zenith Bank Maitama Extension, Abuja, Nigeria</div>
+                                <span class="contact-label">Office</span>
+                                <div class="contact-value">Suite 307 Aula Plaza, Abuja, Nigeria</div>
                             </div>
                         </div>
                     </div>
-                    
                     <div class="response-badge">
                         <i class="fas fa-gem"></i>
-                        <span>Average response time: <strong style="color: var(--gold);">&lt; 15 minutes</strong></span>
+                        <span>Average response: <strong style="color: var(--gold);">&lt; 15 minutes</strong></span>
                     </div>
                 </div>
             </div>
@@ -893,43 +996,71 @@
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col"><h4>MiRaCuLoUs Travels</h4><p style="font-size:0.85rem;">Redefining luxury journeys since 2025</p></div>
-            <div class="footer-col"><h4>Explore</h4><a href="#home">Home</a><a href="#destinations">Experiences</a><a href="#news">Travel News</a></div>
-            <div class="footer-col"><h4>Policies</h4><a href="#">Terms & Conditions</a><a href="#">Privacy</a><a href="#">Updates</a></div>
-            <div class="footer-col"><h4>Connect</h4><a href="#">Blog Posts</a><a href="#">Chat with Us</a><a href="#">Press</a></div>
+            <div class="footer-col">
+                <h4>MiRaCuLoUs</h4>
+                <p style="font-size:0.85rem;">Travel · Invest · Grow</p>
+                <p style="font-size:0.8rem; margin-top:0.5rem; opacity:0.6;">Since 2025</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#blog">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Updates</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="#contact">Contact Us</a>
+                <a href="#">Chat with Us</a>
+                <a href="#">Press</a>
+            </div>
         </div>
-        <div class="copyright">Copyright © 2026 MiRaCuLoUs Travels. All rights reserved.</div>
+        <div class="copyright">Copyright &copy; 2026 MiRaCuLoUs. All rights reserved.</div>
     </footer>
 
+    <!-- Floating Elements -->
     <div class="chat-bubble" id="chatBubble"><i class="fas fa-comment-dots"></i></div>
     <div class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></div>
-    <div id="toastMsg" class="toast-msg">✨ Request received. Our gold desk will respond shortly.</div>
+    <div id="toastMsg" class="toast-msg">✨ Message received. We'll respond shortly.</div>
+
+    <!-- "COMING SOON" MODAL -->
+    <div class="modal-overlay" id="comingSoonModal">
+        <div class="modal-content">
+            <span class="modal-sparkle"><i class="fas fa-sparkles"></i></span>
+            <span class="modal-sparkle"><i class="fas fa-sparkles"></i></span>
+            <span class="modal-sparkle"><i class="fas fa-sparkles"></i></span>
+            <i class="fas fa-rocket modal-icon"></i>
+            <h2>Coming <span>Soon!</span></h2>
+            <p>We're crafting something extraordinary. This feature is under development and will be available shortly.</p>
+            <button class="modal-close-btn" onclick="closeModal()">I'll Wait <i class="fas fa-heart" style="margin-left:8px;"></i></button>
+        </div>
+    </div>
 
     <script>
         // Preloader
         window.addEventListener('load', () => {
             setTimeout(() => {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.visibility = 'hidden';
             }, 1200);
         });
 
         // Sticky Navbar
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-            
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
             const winScroll = document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - window.innerHeight;
-            const scrolled = (winScroll / height) * 100;
             const progressBar = document.getElementById('progressBar');
-            if (progressBar) progressBar.style.width = scrolled + '%';
-            
+            if (progressBar) progressBar.style.width = (winScroll / height) * 100 + '%';
             const backBtn = document.getElementById('backToTop');
-            if (winScroll > 300) backBtn.classList.add('show');
-            else backBtn.classList.remove('show');
+            backBtn.classList.toggle('show', winScroll > 300);
         });
 
         // Mobile menu
@@ -945,16 +1076,39 @@
         }, { threshold: 0.1 });
         fadeElements.forEach(el => observer.observe(el));
 
+        // Toast
         function showToast(message) {
             const toast = document.getElementById('toastMsg');
-            toast.textContent = message || "✨ Request received. Our gold desk will respond shortly.";
+            toast.textContent = message || "✨ Message received. We'll respond shortly.";
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
+        // Back to top
         document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Chat bubble
         document.getElementById('chatBubble').addEventListener('click', () => showToast("💬 A concierge will connect with you in under 2 minutes."));
 
+        // "Coming Soon" Modal
+        function openModal() {
+            document.getElementById('comingSoonModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('comingSoonModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        // Close modal on backdrop click
+        document.getElementById('comingSoonModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeModal();
+        });
+        // Close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Form submission
         const form = document.getElementById('contactForm');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -965,11 +1119,12 @@
             setTimeout(() => {
                 btn.innerHTML = originalHTML;
                 btn.disabled = false;
-                showToast(`Thank you, ${document.getElementById('fullName').value || 'guest'}. Our concierge will respond shortly.`);
+                showToast(`Thank you, ${document.getElementById('fullName').value || 'guest'}. We'll respond shortly.`);
                 form.reset();
             }, 1200);
         });
 
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
