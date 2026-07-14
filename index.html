@@ -30,12 +30,11 @@
             <div class="logo">MiRaCuLoUs</div>
             <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#services">Travels</a></li>
-                <li><a href="#services">Investment</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact" class="btn-nav">Get Started</a></li>
+                <li><a href="#contact" class="btn-nav">Updates</a></li>
             </ul>
         </nav>
     </header>
@@ -43,47 +42,47 @@
     <main>
         <!-- HERO SECTION -->
         <section id="home" class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://storage.coverr.co/videos/3BqO1P9I0kKbAyA8V1BgoN1h22Q7Ij21?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIxMTMyNTEzIiwiaWF0IjoxNzMyNDU3MjUzLCJleHAiOjE3MzI1NDM2NTN9.tdhDNa7bW1Aq9FMWF1H7WtRQrOk2ByQK6jCQ_RYV5Ek" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-badge"><i class="fas fa-compass"></i> Experiences that last a lifetime</span>
                 <h1>Travel, Invest &amp; <span>Grow</span> with MiRaCuLoUs</h1>
                 <p>Your trusted partner for luxury travel, smart investment consultations, and expert insights — all in one place.</p>
-                <div class="hero-buttons">
-                    <button class="btn-gold" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services <i class="fas fa-arrow-right"></i></button>
-                    <button class="btn-gold btn-outline-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to an Expert</button>
-                </div>
+                <button class="btn-gold" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services <i class="fas fa-arrow-right"></i></button>
             </div>
         </section>
 
         <!-- SERVICES SECTION -->
-        <section id="services" class="container" style="padding-top: 3.5rem;">
+        <section id="services" class="container">
             <div class="section-header fade-up">
                 <h2>What We Offer</h2>
                 <p class="section-subtitle">Three pillars of excellence — curated travel, strategic investment, and expert knowledge</p>
             </div>
             <div class="services-grid fade-up">
-                <div class="service-card">
+                <a href="/services.html" class="service-card">
                     <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
                     <h3>Travel Agency</h3>
                     <p>Luxury travel experiences tailored to your taste. Private jets, ultra-luxe hideaways, and seamless global journeys.</p>
-                    <a href="#" class="service-link" onclick="openModal(); return false;">Discover Travel <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="service-card">
+                    <span class="service-link">Learn More <i class="fas fa-chevron-right"></i></span>
+                </a>
+                <a href="/investment.html" class="service-card">
                     <div class="service-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Investment Consultations</h3>
                     <p>Strategic investment advice for high-net-worth individuals. Grow your wealth with expert guidance.</p>
-                    <a href="#" class="service-link" onclick="openModal(); return false;">Explore Investments <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="service-card">
+                    <span class="service-link">Learn More <i class="fas fa-chevron-right"></i></span>
+                </a>
+                <div class="service-card" onclick="openModal();">
                     <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
                     <h3>Expert Blog</h3>
                     <p>Insightful articles on travel trends, investment strategies, and lifestyle tips from our team of experts.</p>
-                    <a href="#" class="service-link" onclick="openModal(); return false;">Read Our Blog <i class="fas fa-chevron-right"></i></a>
+                    <span class="service-link">Coming Soon <i class="fas fa-chevron-right"></i></span>
                 </div>
             </div>
         </section>
 
         <!-- ABOUT SECTION -->
-        <section id="about" class="container" style="padding: 2.5rem 0;">
+        <section id="about" class="container">
             <div class="section-header fade-up">
                 <h2>About MiRaCuLoUs</h2>
                 <p class="section-subtitle">Your gateway to extraordinary experiences and expert guidance</p>
@@ -113,82 +112,27 @@
             </div>
         </section>
 
-        <!-- BLOG SECTION -->
-        <section id="blog" class="container" style="padding: 3rem 0;">
-            <div class="section-header fade-up">
-                <h2>From Our Blog</h2>
-                <p class="section-subtitle">Expert insights on travel, investment, and lifestyle</p>
-            </div>
-            <div class="blog-grid fade-up">
-                <div class="blog-card" onclick="openModal();">
-                    <span class="blog-icon"><i class="fas fa-globe-africa"></i></span>
-                    <h4>Top 10 Destinations for 2026</h4>
-                    <p>Discover the most sought-after travel destinations for the discerning traveler this year.</p>
-                    <span class="blog-tag">Travel</span>
-                </div>
-                <div class="blog-card" onclick="openModal();">
-                    <span class="blog-icon"><i class="fas fa-coins"></i></span>
-                    <h4>Smart Investment Strategies</h4>
-                    <p>How high-net-worth individuals are diversifying portfolios in 2026.</p>
-                    <span class="blog-tag">Investment</span>
-                </div>
-                <div class="blog-card" onclick="openModal();">
-                    <span class="blog-icon"><i class="fas fa-crown"></i></span>
-                    <h4>The Art of Luxury Living</h4>
-                    <p>Curated insights on premium experiences and elevated lifestyle choices.</p>
-                    <span class="blog-tag">Lifestyle</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
+        <!-- GET UPDATES SECTION -->
         <div class="container" id="contact">
-            <div class="section-header fade-up"><h2>Get in Touch</h2></div>
-            <div class="contact-wrapper fade-up">
-                <div class="contact-form-side">
-                    <form id="contactForm">
-                        <div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required id="fullName"></div>
-                        <div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required id="emailContact"></div>
-                        <div class="form-group"><textarea rows="3" class="form-input" style="border-radius:20px; min-height:90px;" placeholder="How can we help?"></textarea></div>
-                        <button type="submit" class="btn-gold" style="width:100%; justify-content:center;" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
-                        <p style="font-size:0.7rem; margin-top:1rem; text-align:center; color:var(--gray-text);"><i class="fas fa-clock"></i> Response within 2 hours — 24/7 support</p>
-                    </form>
-                </div>
-                <div class="contact-info-side">
-                    <h3>Let's Connect</h3>
-                    <p>Reach out for travel planning, investment consultations, or general inquiries.</p>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <span class="contact-label">Call Us</span>
-                            <span><a href="tel:08055878626">0805 587 8626</a></span>
-                        </div>
+            <div class="section-header fade-up"><h2>Get Updates</h2></div>
+            <div class="updates-wrapper fade-up">
+                <form id="updatesForm">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Full Name" required id="fullName">
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <span class="contact-label">Email Us</span>
-                            <span><a href="mailto:mmiraculous42@gmail.com">mmiraculous42@gmail.com</a></span>
-                        </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email Address" required id="emailContact">
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <span class="contact-label">WhatsApp</span>
-                            <span><a href="https://wa.me/2348055878626" target="_blank">0805 587 8626</a></span>
-                        </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-input" placeholder="WhatsApp Number" required id="whatsappNumber">
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <span class="contact-label">Office</span>
-                            <span>Suite 307 Aula Plaza, Abuja, Nigeria</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
-                        <span style="font-size:0.8rem; opacity:0.6;"><i class="fas fa-gem" style="color:var(--gold);"></i> Average response: <strong style="color:var(--gold);">&lt; 15 minutes</strong></span>
-                    </div>
-                </div>
+                    <button type="submit" class="btn-gold" style="width:100%; justify-content:center;" id="submitBtn">
+                        <i class="fas fa-bell"></i> Subscribe for Updates
+                    </button>
+                    <p style="font-size:0.7rem; margin-top:1rem; text-align:center; color:var(--gray-text);">
+                        <i class="fas fa-shield-alt"></i> We respect your privacy. No spam, ever.
+                    </p>
+                </form>
             </div>
         </div>
     </main>
@@ -203,22 +147,22 @@
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#services">Travels</a>
-                <a href="#services">Investment</a>
+                <a href="#services">Services</a>
                 <a href="#about">About</a>
-                <a href="#blog">Blog</a>
+                <a href="#contact">Updates</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
                 <a href="#">Terms & Conditions</a>
                 <a href="#">Privacy Policy</a>
-                <a href="#">Updates</a>
             </div>
             <div class="footer-col">
-                <h4>Connect</h4>
-                <a href="#contact">Contact Us</a>
-                <a href="https://wa.me/2348055878626" target="_blank">Chat on WhatsApp</a>
-                <a href="#">Press</a>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                </div>
             </div>
         </div>
         <div class="copyright">Copyright &copy; 2026 MiRaCuLoUs. All rights reserved.</div>
@@ -231,7 +175,7 @@
 
     <!-- Back to Top -->
     <div class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></div>
-    <div id="toastMsg" class="toast-msg">✨ Message received. We'll respond shortly.</div>
+    <div id="toastMsg" class="toast-msg">✨ Subscribed successfully!</div>
 
     <!-- "COMING SOON" MODAL -->
     <div class="modal-overlay" id="comingSoonModal">
