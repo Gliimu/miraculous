@@ -79,6 +79,7 @@ h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
     font-weight: 700;
     color: white;
     letter-spacing: -0.5px;
+    text-decoration: none;
 }
 .nav-links {
     display: flex;
@@ -118,35 +119,24 @@ h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
     position: relative;
     min-height: 90vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 2rem 80px;
+    justify-content: flex-end;
+    padding: 120px 5% 80px;
     overflow: hidden;
-}
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 0;
+    background: url('https://images.pexels.com/photos/3707172/pexels-photo-3707172.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center/cover;
 }
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(10, 37, 64, 0.55);
+    background: linear-gradient(90deg, rgba(10, 37, 64, 0.2) 0%, rgba(10, 37, 64, 0.7) 60%, rgba(10, 37, 64, 0.85) 100%);
     z-index: 1;
 }
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
+    max-width: 580px;
+    margin-left: auto;
+    text-align: right;
     animation: fadeUpHero 1s ease-out forwards;
     opacity: 0;
 }
@@ -154,8 +144,18 @@ h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.hero-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
 .hero h1 {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     line-height: 1.15;
     color: white;
     margin-bottom: 1rem;
@@ -166,10 +166,14 @@ h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
     font-size: 1rem;
     color: rgba(255,255,255,0.7);
     margin-bottom: 2rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
     font-weight: 300;
+    max-width: 480px;
+    margin-left: auto;
+}
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
 }
 
 /* --- BUTTONS --- */
@@ -186,15 +190,37 @@ h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
 }
 .btn-gold:hover { background: #b3862f; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,160,61,0.2); }
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 0.7rem 2rem;
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.btn-outline:hover {
+    background: white;
+    color: var(--deep-blue);
+    transform: translateY(-2px);
+    border-color: white;
+}
 
 /* --- CONTAINER --- */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-section { padding: 4rem 0; }
-.section-header { text-align: center; margin-bottom: 2.5rem; }
+
+/* --- SECTION SPACING (FIXED) --- */
+section { padding: 5rem 0; }
+section:first-of-type { padding-top: 0; }
+
+.section-header { text-align: center; margin-bottom: 3.5rem; }
 .section-header h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--deep-blue);
     font-weight: 600;
     letter-spacing: -0.5px;
@@ -296,13 +322,9 @@ section { padding: 4rem 0; }
 }
 .about-wrapper p:last-child { margin-bottom: 0; }
 
-/* --- TESTIMONIALS --- */
+/* --- TESTIMONIALS (NO BACKGROUND) --- */
 .testimonials-section {
-    background: var(--white);
-    padding: 3.5rem 2rem;
-    margin: 0 1.5rem;
-    border-radius: 16px;
-    box-shadow: var(--card-shadow);
+    padding: 5rem 0;
 }
 .testimonial-grid {
     display: grid;
@@ -312,22 +334,28 @@ section { padding: 4rem 0; }
     margin: 0 auto;
 }
 .testimonial-card {
-    padding: 1.5rem;
-    text-align: center;
-    border: 1px solid var(--light-gray);
+    background: var(--white);
+    padding: 2rem;
     border-radius: 12px;
+    border: 1px solid var(--light-gray);
     transition: 0.3s;
+    position: relative;
 }
 .testimonial-card:hover {
     border-color: var(--gold);
-    background: var(--off-white);
+    box-shadow: var(--card-shadow);
+}
+.testimonial-quote {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.4;
 }
 .testimonial-text {
     font-size: 0.95rem;
-    font-style: italic;
     color: var(--deep-blue);
-    line-height: 1.6;
-    margin-bottom: 0.8rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
     font-weight: 300;
 }
 .testimonial-author {
@@ -370,6 +398,12 @@ section { padding: 4rem 0; }
     box-shadow: 0 0 0 3px rgba(201,160,61,0.06);
 }
 .form-input::placeholder { color: #b0b0b0; }
+.form-note {
+    font-size: 0.7rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--gray-text);
+}
 
 /* --- FOOTER --- */
 footer {
@@ -575,7 +609,22 @@ footer {
         grid-template-columns: 1fr;
     }
     .footer-grid { flex-direction: column; }
-    .hero h1 { font-size: 2rem; }
+    .hero { 
+        justify-content: center;
+        text-align: center;
+        background-position: 60% center;
+    }
+    .hero-content { 
+        text-align: center; 
+        max-width: 100%;
+        margin: 0;
+    }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { max-width: 100%; margin: 0 auto 1.5rem; }
+    .hero-actions { justify-content: center; }
+    .hero-overlay {
+        background: linear-gradient(135deg, rgba(10, 37, 64, 0.6) 0%, rgba(10, 37, 64, 0.8) 100%);
+    }
     .nav-links { display: none; }
     .menu-icon { display: block; }
     .nav-links.mobile-open {
@@ -584,12 +633,11 @@ footer {
         background: rgba(10,37,64,0.98); backdrop-filter: blur(12px);
         padding: 1.5rem 2rem; gap: 1.2rem; text-align: center;
     }
-    .hero { min-height: 70vh; padding: 100px 1.5rem 60px; }
-    .testimonials-section { margin: 0 1rem; padding: 2.5rem 1.5rem; }
-    .modal-content { padding: 2rem 1.5rem; }
-    .modal-content h2 { font-size: 1.6rem; }
+    section { padding: 3rem 0; }
+    .section-header { margin-bottom: 2.5rem; }
     .updates-wrapper { padding: 2rem 1.5rem; }
     .about-wrapper { padding: 2rem 1.5rem; }
+    .testimonial-card { padding: 1.5rem; }
 }
 @media (min-width: 768px) { .hero h1 { font-size: 3.5rem; } }
 @media (min-width: 1024px) { .hero h1 { font-size: 4rem; } }
