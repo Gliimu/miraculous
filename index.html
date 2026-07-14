@@ -27,7 +27,7 @@
     <!-- HEADER -->
     <header>
         <nav class="navbar" id="navbar">
-            <div class="logo">MiRaCuLoUs</div>
+            <a href="index.html" class="logo">MiRaCuLoUs</a>
             <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#services">Services</a></li>
@@ -42,14 +42,15 @@
     <main>
         <!-- HERO SECTION -->
         <section id="home" class="hero">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="https://storage.coverr.co/videos/3BqO1P9I0kKbAyA8V1BgoN1h22Q7Ij21?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOiIxMTMyNTEzIiwiaWF0IjoxNzMyNDU3MjUzLCJleHAiOjE3MzI1NDM2NTN9.tdhDNa7bW1Aq9FMWF1H7WtRQrOk2ByQK6jCQ_RYV5Ek" type="video/mp4">
-            </video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
+                <span class="hero-tag">Since 2025</span>
                 <h1>Travel, Invest &amp; <span>Grow</span> with MiRaCuLoUs</h1>
                 <p>Your trusted partner for luxury travel, smart investment consultations, and expert insights — all in one place.</p>
-                <button class="btn-gold" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services <i class="fas fa-arrow-right"></i></button>
+                <div class="hero-actions">
+                    <button class="btn-gold" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
+                </div>
             </div>
         </section>
 
@@ -60,13 +61,13 @@
                 <p class="section-subtitle">Three pillars of excellence — curated travel, strategic investment, and expert knowledge</p>
             </div>
             <div class="services-grid fade-up">
-                <a href="/services.html" class="service-card">
+                <a href="services.html" class="service-card">
                     <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
                     <h3>Travel Agency</h3>
                     <p>Luxury travel experiences tailored to your taste. Private jets, ultra-luxe hideaways, and seamless global journeys.</p>
                     <span class="service-link">Learn More <i class="fas fa-chevron-right"></i></span>
                 </a>
-                <a href="/investment.html" class="service-card">
+                <a href="investment.html" class="service-card">
                     <div class="service-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Investment Consultations</h3>
                     <p>Strategic investment advice for high-net-worth individuals. Grow your wealth with expert guidance.</p>
@@ -94,17 +95,23 @@
         </section>
 
         <!-- TESTIMONIALS -->
-        <section id="testimonials" class="testimonials-section fade-up">
+        <section id="testimonials" class="testimonials-section container fade-up">
             <div class="section-header">
                 <h2>What Our Clients Say</h2>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
                     <p class="testimonial-text">"Absolutely flawless. MiRaCuLoUs exceeded every expectation. From seamless travel arrangements to expert investment advice, they deliver premium value."</p>
                     <p class="testimonial-author">— Michael Olatunji</p>
                     <p class="testimonial-title">Serial Entrepreneur, Lagos</p>
                 </div>
                 <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
                     <p class="testimonial-text">"Their response time is super fast — even at midnight. That's what I call premium service. They truly understand what high-net-worth individuals need."</p>
                     <p class="testimonial-author">— Adam Kshel</p>
                     <p class="testimonial-title">CEO, GLIIMU LTD</p>
@@ -113,8 +120,11 @@
         </section>
 
         <!-- GET UPDATES SECTION -->
-        <div class="container" id="contact">
-            <div class="section-header fade-up"><h2>Get Updates</h2></div>
+        <section id="contact" class="container">
+            <div class="section-header fade-up">
+                <h2>Get Updates</h2>
+                <p class="section-subtitle">Stay informed about our latest services, travel insights, and investment opportunities.</p>
+            </div>
             <div class="updates-wrapper fade-up">
                 <form id="updatesForm">
                     <div class="form-group">
@@ -129,12 +139,12 @@
                     <button type="submit" class="btn-gold" style="width:100%; justify-content:center;" id="submitBtn">
                         <i class="fas fa-bell"></i> Subscribe for Updates
                     </button>
-                    <p style="font-size:0.7rem; margin-top:1rem; text-align:center; color:var(--gray-text);">
+                    <p class="form-note">
                         <i class="fas fa-shield-alt"></i> We respect your privacy. No spam, ever.
                     </p>
                 </form>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
