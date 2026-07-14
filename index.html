@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>MiRaCuLoUs | Travel, Investment &amp; Insights</title>
+    <title>MiRaCuLoUs | Travel · Invest · Grow</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -16,17 +16,14 @@
         :root {
             --deep-blue: #0a2540;
             --royal-blue: #1c3e6c;
-            --bright-blue: #2b5b8b;
             --gold: #c9a03d;
             --gold-light: #e6c26c;
             --gold-soft: #f4e3c6;
             --white: #ffffff;
-            --off-white: #fefcf5;
+            --off-white: #f8f6f0;
             --gray-text: #5a6e7c;
-            --card-shadow: 0 20px 40px -12px rgba(10, 37, 64, 0.12);
-            --hover-shadow: 0 30px 55px -12px rgba(10, 37, 64, 0.2);
-            --gold-shadow: 0 15px 30px -8px rgba(201, 160, 61, 0.25);
-            --transition-smooth: cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            --card-shadow: 0 8px 30px -8px rgba(10, 37, 64, 0.08);
+            --hover-shadow: 0 20px 45px -12px rgba(10, 37, 64, 0.15);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,15 +35,10 @@
             background-color: var(--off-white);
             color: var(--deep-blue);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
-
-        /* --- Custom Scrollbar --- */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #b3862f; }
 
         /* --- PRELOADER --- */
         #preloader {
@@ -85,25 +77,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 5%;
+            padding: 1rem 5%;
             z-index: 1000;
-            transition: all 0.3s var(--transition-smooth);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             background: transparent;
         }
         .navbar.scrolled {
             background: rgba(10, 37, 64, 0.96);
             backdrop-filter: blur(12px);
-            padding: 0.8rem 5%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 0.7rem 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             background: linear-gradient(135deg, #fff, var(--gold-light));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.5px;
         }
         .nav-links {
             display: flex;
@@ -116,13 +108,13 @@
             font-weight: 500;
             color: white;
             transition: 0.25s;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             position: relative;
         }
         .nav-links li a::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            bottom: -4px;
             left: 0;
             width: 0;
             height: 2px;
@@ -133,447 +125,87 @@
         .nav-links li a:hover { color: var(--gold); }
         .btn-nav {
             background: var(--gold);
-            padding: 0.5rem 1.5rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 40px;
             color: var(--deep-blue) !important;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 0.85rem !important;
         }
         .btn-nav:hover { background: #b3862f; transform: translateY(-2px); }
         .btn-nav::after { display: none; }
-        .menu-icon { display: none; font-size: 1.8rem; color: white; cursor: pointer; }
+        .menu-icon { display: none; font-size: 1.6rem; color: white; cursor: pointer; }
 
-        /* Progress Bar */
-        .progress-container {
-            position: fixed;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: transparent;
-            z-index: 1001;
-        }
-        .progress-bar {
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            width: 0%;
-            transition: width 0.1s;
-        }
-
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (Simplified) --- */
         .hero {
             position: relative;
-            height: 100vh;
-            min-height: 700px;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: url('https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center/cover;
-            background-attachment: fixed;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(10, 37, 64, 0.75), rgba(0, 0, 0, 0.5));
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #0d2f4a 100%);
         }
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 850px;
-            padding: 0 1.5rem;
+            max-width: 750px;
             animation: fadeUpHero 1s ease-out forwards;
             opacity: 0;
         }
         @keyframes fadeUpHero {
-            from { opacity: 0; transform: translateY(40px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .hero-badge {
-            background: rgba(201, 160, 61, 0.9);
             display: inline-block;
-            padding: 0.4rem 1.2rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            font-size: 0.7rem;
+            font-weight: 600;
             color: var(--deep-blue);
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            color: white;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            background: var(--gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             margin-bottom: 1.2rem;
         }
-        .hero h1 span { color: var(--gold-light); border-bottom: 2px solid var(--gold); }
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .hero h1 span { color: var(--gold-light); }
         .hero p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.9);
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
             margin-bottom: 2rem;
-            max-width: 650px;
+            max-width: 550px;
             margin-left: auto;
             margin-right: auto;
         }
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* --- Container & Sections --- */
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-        section { padding: 5rem 0; }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--deep-blue);
-            position: relative;
-            display: inline-block;
-        }
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            border-radius: 3px;
-        }
-        .section-subtitle {
-            color: var(--gray-text);
-            max-width: 600px;
-            margin: 1.5rem auto 0;
-            font-size: 1rem;
-        }
-
-        /* --- SERVICES CARDS (Travel, Investment, Blog) --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--hover-shadow);
-        }
-        .service-image {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .service-icon-overlay {
-            position: absolute;
-            bottom: -25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--deep-blue);
-            font-size: 1.4rem;
-            box-shadow: 0 8px 20px rgba(201, 160, 61, 0.3);
-        }
-        .service-content { padding: 2rem 1.8rem 1.8rem; }
-        .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--deep-blue);
-        }
-        .service-content p {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        .service-link {
-            display: inline-block;
-            margin-top: 1.2rem;
-            font-weight: 600;
-            color: var(--gold);
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .service-link i { transition: 0.2s; }
-        .service-link:hover i { transform: translateX(5px); }
-
-        /* --- TESTIMONIALS (Simplified, no stars) --- */
-        .testimonials-section {
-            background: var(--deep-blue);
-            border-radius: 40px;
-            margin: 3rem 1.5rem;
-            padding: 4rem 2rem;
-            color: var(--white);
-        }
-        .testimonials-section .section-header h2 {
-            color: var(--white);
-        }
-        .testimonials-section .section-header h2:after {
-            background: var(--gold);
-        }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .testimonial-card {
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(4px);
-            padding: 2rem;
-            border-radius: 24px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.06);
-            transition: 0.3s;
-        }
-        .testimonial-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-4px);
-        }
-        .testimonial-text {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.9);
-        }
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--gold);
-            font-size: 0.95rem;
-        }
-        .testimonial-title {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
-            margin-top: 2px;
-        }
-
-        /* --- BLOG PREVIEW --- */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        .blog-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            cursor: pointer;
-        }
-        .blog-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--hover-shadow);
-        }
-        .blog-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .blog-tag {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--gold);
-            padding: 4px 14px;
-            border-radius: 40px;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--deep-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .blog-content { padding: 1.5rem; }
-        .blog-date {
-            font-size: 0.75rem;
-            color: var(--gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        .blog-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-        .blog-content p {
-            font-size: 0.85rem;
-            color: var(--gray-text);
-            line-height: 1.5;
-        }
-
-        /* --- CONTACT SECTION --- */
-        .contact-wrapper {
-            background: var(--white);
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            flex-direction: row;
-        }
-        .contact-form-side { padding: 3rem; flex: 1.5; }
-        .contact-info-side {
-            background: linear-gradient(145deg, var(--deep-blue) 0%, #0d2f4a 100%);
-            color: var(--white);
-            padding: 3rem;
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-        .contact-info-side::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--gold), var(--gold-light));
-        }
-        .contact-header {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-        }
-        .contact-header h3 {
-            font-size: 1.6rem;
-            color: var(--gold);
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 0.5rem;
-        }
-        .contact-header p {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            line-height: 1.4;
-        }
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-            margin: 2rem 0;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            transition: transform 0.2s ease;
-        }
-        .contact-item:hover { transform: translateX(5px); }
-        .contact-icon {
-            width: 52px;
-            height: 52px;
-            background: rgba(201, 160, 61, 0.12);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            border: 1px solid rgba(201, 160, 61, 0.3);
-        }
-        .contact-item:hover .contact-icon {
-            background: var(--gold);
-            border-color: var(--gold);
-        }
-        .contact-item:hover .contact-icon i { color: var(--deep-blue); }
-        .contact-icon i {
-            font-size: 1.3rem;
-            color: var(--gold);
-            transition: color 0.3s;
-        }
-        .contact-text { flex: 1; }
-        .contact-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 0.2rem;
-            display: block;
-        }
-        .contact-value {
-            font-size: 1rem;
-            font-weight: 500;
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .contact-value a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .contact-value a:hover { color: var(--gold); }
-        .contact-value.highlight {
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-        .contact-value.highlight a { color: var(--gold-light); }
-        .contact-value.highlight a:hover { color: var(--gold); text-decoration: underline; }
-        .response-badge {
-            background: rgba(201, 160, 61, 0.12);
-            border-radius: 30px;
-            padding: 0.8rem 1.2rem;
-            margin-top: 2rem;
-            text-align: center;
-            border: 1px solid rgba(201, 160, 61, 0.25);
-        }
-        .response-badge i { color: var(--gold); margin-right: 0.5rem; }
-        .response-badge span { font-size: 0.8rem; font-weight: 500; }
-
-        /* Form */
-        .form-group { margin-bottom: 1.5rem; }
-        .form-input {
-            width: 100%;
-            padding: 1rem 1.2rem;
-            border-radius: 50px;
-            border: 1px solid #e2e8f0;
-            font-family: 'Inter', sans-serif;
-            transition: 0.2s;
-            background: #f8f9fc;
-        }
-        .form-input:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(201,160,61,0.1);
-        }
+        /* --- Buttons --- */
         .btn-gold {
             background: var(--gold);
             color: var(--deep-blue);
             border: none;
-            padding: 0.9rem 2.2rem;
-            font-weight: 700;
+            padding: 0.75rem 1.8rem;
+            font-weight: 600;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.25s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-        .btn-gold:hover { background: #e2b13b; transform: translateY(-3px); box-shadow: var(--gold-shadow); }
+        .btn-gold:hover { background: #b3862f; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,160,61,0.3); }
         .btn-outline-gold {
             background: transparent;
             border: 1.5px solid var(--gold);
@@ -582,7 +214,354 @@
         .btn-outline-gold:hover {
             background: var(--gold);
             color: var(--deep-blue);
+            transform: translateY(-2px);
         }
+
+        /* --- Container --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 4rem 0; }
+        .section-header { text-align: center; margin-bottom: 2.5rem; }
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--deep-blue);
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: 3px;
+        }
+        .section-subtitle {
+            color: var(--gray-text);
+            max-width: 550px;
+            margin: 1.2rem auto 0;
+            font-size: 0.95rem;
+        }
+
+        /* --- SERVICES (Icon-based) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--hover-shadow);
+        }
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.2rem;
+            background: linear-gradient(135deg, var(--gold-soft), var(--gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--deep-blue);
+            transition: 0.3s;
+        }
+        .service-card:hover .service-icon {
+            background: var(--gold);
+            transform: scale(1.05);
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-blue);
+        }
+        .service-card p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .service-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--gold);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .service-link i { transition: 0.2s; }
+        .service-link:hover i { transform: translateX(4px); }
+
+        /* --- ABOUT (Simple) --- */
+        .about-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--card-shadow);
+        }
+        .about-wrapper p {
+            color: var(--gray-text);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .about-wrapper p:last-child { margin-bottom: 0; }
+
+        /* --- TESTIMONIALS (Simplified) --- */
+        .testimonials-section {
+            background: var(--deep-blue);
+            border-radius: 30px;
+            margin: 2rem 1.5rem;
+            padding: 3.5rem 2rem;
+        }
+        .testimonials-section .section-header h2 { color: var(--white); }
+        .testimonials-section .section-header h2:after { background: var(--gold); }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.8rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: 0.3s;
+        }
+        .testimonial-card:hover { background: rgba(255,255,255,0.08); }
+        .testimonial-text {
+            font-size: 1rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+        .testimonial-title {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 2px;
+        }
+
+        /* --- BLOG (Icon + Text) --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+        .blog-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        .blog-icon {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .blog-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .blog-card p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+        .blog-tag {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-top: 0.8rem;
+        }
+
+        /* --- CONTACT (Simpler, cleaner) --- */
+        .contact-wrapper {
+            background: var(--white);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: row;
+        }
+        .contact-form-side { padding: 2.5rem; flex: 1.5; }
+        .contact-info-side {
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 2.5rem;
+            flex: 1;
+        }
+        .contact-info-side h3 {
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .contact-info-side > p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .contact-item i {
+            width: 36px;
+            height: 36px;
+            background: rgba(201,160,61,0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.9rem;
+            border: 1px solid rgba(201,160,61,0.15);
+        }
+        .contact-item span {
+            font-size: 0.9rem;
+        }
+        .contact-item a {
+            color: var(--gold-light);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .contact-item a:hover { color: var(--gold); text-decoration: underline; }
+        .contact-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.4);
+            display: block;
+        }
+
+        .form-group { margin-bottom: 1.2rem; }
+        .form-input {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            transition: 0.2s;
+            background: #f8f9fc;
+            font-size: 0.9rem;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201,160,61,0.08);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--deep-blue);
+            margin-top: 3rem;
+            padding: 2.5rem 2rem 1.5rem;
+            border-radius: 30px 30px 0 0;
+            color: #cfdfed;
+        }
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .footer-col h4 { color: var(--gold); margin-bottom: 1rem; font-size: 1rem; }
+        .footer-col a { color: #cfdfed; text-decoration: none; display: block; margin: 0.4rem 0; transition: 0.2s; font-size: 0.85rem; }
+        .footer-col a:hover { color: var(--gold); transform: translateX(3px); }
+        .copyright { text-align: center; border-top: 1px solid rgba(201,160,61,0.15); margin-top: 2rem; padding-top: 1.5rem; font-size: 0.75rem; opacity: 0.6; }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5); }
+
+        /* --- Back to Top --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 44px;
+            height: 44px;
+            background: var(--deep-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.1rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--gold); color: var(--deep-blue); transform: translateY(-3px); }
 
         /* --- "COMING SOON" MODAL --- */
         .modal-overlay {
@@ -595,150 +574,68 @@
             align-items: center;
             justify-content: center;
             padding: 2rem;
-            animation: fadeInModal 0.4s ease;
         }
         .modal-overlay.active { display: flex; }
-        @keyframes fadeInModal {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
         .modal-content {
             background: var(--white);
-            border-radius: 40px;
-            padding: 3.5rem 3rem;
-            max-width: 500px;
+            border-radius: 32px;
+            padding: 3rem 2.5rem;
+            max-width: 450px;
             width: 100%;
             text-align: center;
             position: relative;
             box-shadow: 0 40px 60px rgba(0,0,0,0.3);
+            animation: fadeInModal 0.4s ease;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
         .modal-icon {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             display: block;
-            animation: bounce 1.5s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
         .modal-content h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--deep-blue);
             margin-bottom: 0.5rem;
         }
         .modal-content h2 span { color: var(--gold); }
         .modal-content p {
             color: var(--gray-text);
-            font-size: 1rem;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
             line-height: 1.6;
         }
         .modal-close-btn {
             background: var(--gold);
             border: none;
-            padding: 0.8rem 2.5rem;
+            padding: 0.7rem 2.2rem;
             border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             color: var(--deep-blue);
             cursor: pointer;
             transition: 0.3s;
         }
         .modal-close-btn:hover { background: #b3862f; transform: scale(1.02); }
-        .modal-sparkle {
-            position: absolute;
-            font-size: 1.2rem;
-            color: var(--gold);
-            opacity: 0.3;
-        }
-        .modal-sparkle:nth-child(1) { top: 20px; right: 30px; }
-        .modal-sparkle:nth-child(2) { bottom: 20px; left: 30px; }
-        .modal-sparkle:nth-child(3) { top: 50%; right: 15px; }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--deep-blue);
-            margin-top: 3rem;
-            padding: 3rem 2rem 2rem;
-            border-radius: 40px 40px 0 0;
-            color: #cfdfed;
-        }
-        .footer-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-        .footer-col h4 { color: var(--gold); margin-bottom: 1.2rem; font-size: 1.1rem; }
-        .footer-col a { color: #cfdfed; text-decoration: none; display: block; margin: 0.6rem 0; transition: 0.2s; }
-        .footer-col a:hover { color: var(--gold); transform: translateX(3px); }
-        .copyright { text-align: center; border-top: 1px solid rgba(201,160,61,0.2); margin-top: 2.5rem; padding-top: 1.8rem; font-size: 0.8rem; }
-
-        /* --- Floating Elements --- */
-        .chat-bubble {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--deep-blue);
-            font-size: 1.6rem;
-            box-shadow: 0 8px 25px rgba(201, 160, 61, 0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 999;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(201, 160, 61, 0.5); }
-            70% { box-shadow: 0 0 0 15px rgba(201, 160, 61, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(201, 160, 61, 0); }
-        }
-        .chat-bubble:hover { transform: scale(1.1); background: #b3862f; }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--deep-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.3rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 999;
-        }
-        .back-to-top.show { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--gold); color: var(--deep-blue); transform: translateY(-3px); }
 
         .toast-msg {
-            position: fixed; bottom: 30px; left: 50%;
+            position: fixed; bottom: 100px; left: 50%;
             transform: translateX(-50%) translateY(20px);
             background: var(--deep-blue); color: var(--gold);
-            padding: 1rem 2rem; border-radius: 60px;
-            font-weight: 600; z-index: 2000;
+            padding: 0.8rem 1.8rem; border-radius: 50px;
+            font-weight: 500; z-index: 2000;
             opacity: 0; transition: all 0.3s;
+            font-size: 0.9rem;
             white-space: nowrap;
         }
         .toast-msg.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
         .spinner {
-            width: 20px; height: 20px;
+            width: 18px; height: 18px;
             border: 2px solid var(--deep-blue);
             border-top-color: transparent;
             border-radius: 50%;
@@ -754,25 +651,28 @@
             }
             .contact-wrapper { flex-direction: column; }
             .footer-grid { flex-direction: column; }
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2rem; }
             .nav-links { display: none; }
             .menu-icon { display: block; }
             .nav-links.mobile-open {
                 display: flex; flex-direction: column;
-                position: absolute; top: 70px; left: 0; width: 100%;
+                position: absolute; top: 65px; left: 0; width: 100%;
                 background: rgba(10,37,64,0.98); backdrop-filter: blur(12px);
-                padding: 2rem; gap: 1.5rem; text-align: center;
+                padding: 1.5rem 2rem; gap: 1.2rem; text-align: center;
             }
-            .hero { background-attachment: scroll; height: auto; min-height: 600px; padding: 120px 0 60px; }
-            .testimonials-section { margin: 2rem 1rem; padding: 2.5rem 1.5rem; }
-            .modal-content { padding: 2.5rem 1.5rem; }
-            .modal-content h2 { font-size: 1.8rem; }
+            .hero { min-height: 70vh; padding: 100px 1.5rem 60px; }
+            .testimonials-section { margin: 1.5rem 1rem; padding: 2.5rem 1.5rem; }
+            .modal-content { padding: 2rem 1.5rem; }
+            .modal-content h2 { font-size: 1.6rem; }
             .hero-buttons { flex-direction: column; align-items: center; }
+            .about-wrapper { padding: 2rem 1.5rem; }
+            .contact-form-side { padding: 1.8rem; }
+            .contact-info-side { padding: 1.8rem; }
         }
-        @media (min-width: 768px) { .hero h1 { font-size: 4rem; } }
-        @media (min-width: 1024px) { .hero h1 { font-size: 4.8rem; } }
+        @media (min-width: 768px) { .hero h1 { font-size: 3.5rem; } }
+        @media (min-width: 1024px) { .hero h1 { font-size: 4rem; } }
 
-        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-up { opacity: 0; transform: translateY(25px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
@@ -791,7 +691,6 @@
             <div class="logo">MiRaCuLoUs</div>
             <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#services">Travels</a></li>
                 <li><a href="#services">Investment</a></li>
                 <li><a href="#about">About</a></li>
@@ -800,14 +699,13 @@
                 <li><a href="#contact" class="btn-nav">Get Started</a></li>
             </ul>
         </nav>
-        <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
     </header>
 
     <main>
         <!-- HERO SECTION -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="hero-badge"><i class="fas fa-compass"></i> Experiences that last a lifetime</div>
+                <span class="hero-badge"><i class="fas fa-compass"></i> Experiences that last a lifetime</span>
                 <h1>Travel, Invest &amp; <span>Grow</span> with MiRaCuLoUs</h1>
                 <p>Your trusted partner for luxury travel, smart investment consultations, and expert insights — all in one place.</p>
                 <div class="hero-buttons">
@@ -817,68 +715,47 @@
             </div>
         </section>
 
-        <!-- SERVICES SECTION: Travel, Investment, Blog -->
-        <section id="services" class="container" style="padding-top: 4rem;">
+        <!-- SERVICES SECTION (Icon-based) -->
+        <section id="services" class="container" style="padding-top: 3.5rem;">
             <div class="section-header fade-up">
                 <h2>What We Offer</h2>
                 <p class="section-subtitle">Three pillars of excellence — curated travel, strategic investment, and expert knowledge</p>
             </div>
             <div class="services-grid fade-up">
-                <!-- Travel Service -->
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.pexels.com/photos/2860701/pexels-photo-2860701.jpeg?auto=compress&cs=tinysrgb&w=800');">
-                        <div class="service-icon-overlay"><i class="fas fa-plane-departure"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Travel Agency</h3>
-                        <p>Luxury travel experiences tailored to your taste. Private jets, ultra-luxe hideaways, and seamless global journeys.</p>
-                        <a href="#" class="service-link" onclick="openModal(); return false;">Discover Travel <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3>Travel Agency</h3>
+                    <p>Luxury travel experiences tailored to your taste. Private jets, ultra-luxe hideaways, and seamless global journeys.</p>
+                    <a href="#" class="service-link" onclick="openModal(); return false;">Discover Travel <i class="fas fa-chevron-right"></i></a>
                 </div>
-
-                <!-- Investment Service -->
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.pexels.com/photos/5668860/pexels-photo-5668860.jpeg?auto=compress&cs=tinysrgb&w=800');">
-                        <div class="service-icon-overlay"><i class="fas fa-chart-line"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Investment Consultations</h3>
-                        <p>Strategic investment advice for high-net-worth individuals. Grow your wealth with expert guidance.</p>
-                        <a href="#" class="service-link" onclick="openModal(); return false;">Explore Investments <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Investment Consultations</h3>
+                    <p>Strategic investment advice for high-net-worth individuals. Grow your wealth with expert guidance.</p>
+                    <a href="#" class="service-link" onclick="openModal(); return false;">Explore Investments <i class="fas fa-chevron-right"></i></a>
                 </div>
-
-                <!-- Blog Service -->
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800');">
-                        <div class="service-icon-overlay"><i class="fas fa-pen-fancy"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Expert Blog</h3>
-                        <p>Insightful articles on travel trends, investment strategies, and lifestyle tips from our team of experts.</p>
-                        <a href="#" class="service-link" onclick="openModal(); return false;">Read Our Blog <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+                    <h3>Expert Blog</h3>
+                    <p>Insightful articles on travel trends, investment strategies, and lifestyle tips from our team of experts.</p>
+                    <a href="#" class="service-link" onclick="openModal(); return false;">Read Our Blog <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT SECTION (Simplified) -->
-        <section id="about" class="container" style="padding: 3rem 0;">
+        <!-- ABOUT SECTION -->
+        <section id="about" class="container" style="padding: 2.5rem 0;">
             <div class="section-header fade-up">
                 <h2>About MiRaCuLoUs</h2>
                 <p class="section-subtitle">Your gateway to extraordinary experiences and expert guidance</p>
             </div>
-            <div style="max-width: 850px; margin: 0 auto; text-align: center; padding: 1rem 0;">
-                <p style="font-size: 1.05rem; color: var(--gray-text); line-height: 1.8; margin-bottom: 1.5rem;">
-                    MiRaCuLoUs is a premier lifestyle and investment consultancy dedicated to serving discerning individuals who value excellence. We combine luxury travel planning with strategic investment advice, backed by a team of industry experts.
-                </p>
-                <p style="font-size: 1.05rem; color: var(--gray-text); line-height: 1.8;">
-                    Our blog serves as a knowledge hub, offering curated insights to help you make informed decisions — whether you're planning your next journey or growing your portfolio.
-                </p>
+            <div class="about-wrapper fade-up">
+                <p>MiRaCuLoUs is a premier lifestyle and investment consultancy dedicated to serving discerning individuals who value excellence. We combine luxury travel planning with strategic investment advice, backed by a team of industry experts.</p>
+                <p>Our blog serves as a knowledge hub, offering curated insights to help you make informed decisions — whether you're planning your next journey or growing your portfolio.</p>
             </div>
         </section>
 
-        <!-- TESTIMONIALS (Simplified, no stars) -->
+        <!-- TESTIMONIALS -->
         <section id="testimonials" class="testimonials-section fade-up">
             <div class="section-header">
                 <h2>What Our Clients Say</h2>
@@ -897,42 +774,30 @@
             </div>
         </section>
 
-        <!-- BLOG PREVIEW SECTION -->
-        <section id="blog" class="container" style="padding: 4rem 0;">
+        <!-- BLOG SECTION (Icon-based) -->
+        <section id="blog" class="container" style="padding: 3rem 0;">
             <div class="section-header fade-up">
                 <h2>From Our Blog</h2>
                 <p class="section-subtitle">Expert insights on travel, investment, and lifestyle</p>
             </div>
             <div class="blog-grid fade-up">
                 <div class="blog-card" onclick="openModal();">
-                    <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/1676987/pexels-photo-1676987.jpeg?auto=compress&cs=tinysrgb&w=800');">
-                        <span class="blog-tag">Travel</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date"><i class="far fa-calendar-alt"></i> June 10, 2026</span>
-                        <h4>Top 10 Destinations for 2026</h4>
-                        <p>Discover the most sought-after travel destinations for the discerning traveler this year.</p>
-                    </div>
+                    <span class="blog-icon"><i class="fas fa-globe-africa"></i></span>
+                    <h4>Top 10 Destinations for 2026</h4>
+                    <p>Discover the most sought-after travel destinations for the discerning traveler this year.</p>
+                    <span class="blog-tag">Travel</span>
                 </div>
                 <div class="blog-card" onclick="openModal();">
-                    <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/7413918/pexels-photo-7413918.jpeg?auto=compress&cs=tinysrgb&w=800');">
-                        <span class="blog-tag">Investment</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date"><i class="far fa-calendar-alt"></i> June 5, 2026</span>
-                        <h4>Smart Investment Strategies</h4>
-                        <p>How high-net-worth individuals are diversifying portfolios in 2026.</p>
-                    </div>
+                    <span class="blog-icon"><i class="fas fa-coins"></i></span>
+                    <h4>Smart Investment Strategies</h4>
+                    <p>How high-net-worth individuals are diversifying portfolios in 2026.</p>
+                    <span class="blog-tag">Investment</span>
                 </div>
                 <div class="blog-card" onclick="openModal();">
-                    <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800');">
-                        <span class="blog-tag">Lifestyle</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date"><i class="far fa-calendar-alt"></i> May 28, 2026</span>
-                        <h4>The Art of Luxury Living</h4>
-                        <p>Curated insights on premium experiences and elevated lifestyle choices.</p>
-                    </div>
+                    <span class="blog-icon"><i class="fas fa-crown"></i></span>
+                    <h4>The Art of Luxury Living</h4>
+                    <p>Curated insights on premium experiences and elevated lifestyle choices.</p>
+                    <span class="blog-tag">Lifestyle</span>
                 </div>
             </div>
         </section>
@@ -945,49 +810,44 @@
                     <form id="contactForm">
                         <div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required id="fullName"></div>
                         <div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required id="emailContact"></div>
-                        <div class="form-group"><textarea rows="3" class="form-input" style="border-radius:20px;" placeholder="How can we help? (we reply in < 2h)"></textarea></div>
+                        <div class="form-group"><textarea rows="3" class="form-input" style="border-radius:20px; min-height:90px;" placeholder="How can we help?"></textarea></div>
                         <button type="submit" class="btn-gold" style="width:100%; justify-content:center;" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
-                        <p style="font-size:0.7rem; margin-top:1rem; text-align:center;"><i class="fas fa-clock"></i> Response within 2 hours — 24/7 support</p>
+                        <p style="font-size:0.7rem; margin-top:1rem; text-align:center; color:var(--gray-text);"><i class="fas fa-clock"></i> Response within 2 hours — 24/7 support</p>
                     </form>
                 </div>
                 <div class="contact-info-side">
-                    <div class="contact-header">
-                        <h3>Let's Connect</h3>
-                        <p>Reach out to our team for travel planning, investment consultations, or general inquiries.</p>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div class="contact-text">
-                                <span class="contact-label">24/7 Hotline</span>
-                                <div class="contact-value highlight"><a href="tel:+2347063737085">+234 706 3737 085</a></div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-text">
-                                <span class="contact-label">Email Us</span>
-                                <div class="contact-value highlight"><a href="mailto:mmiraculous42@gmail.com">mmiraculous42@gmail.com</a></div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                            <div class="contact-text">
-                                <span class="contact-label">WhatsApp</span>
-                                <div class="contact-value"><a href="https://wa.me/2347063737085" target="_blank">+234 706 3737 085</a></div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="contact-text">
-                                <span class="contact-label">Office</span>
-                                <div class="contact-value">Suite 307 Aula Plaza, Abuja, Nigeria</div>
-                            </div>
+                    <h3>Let's Connect</h3>
+                    <p>Reach out for travel planning, investment consultations, or general inquiries.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <span class="contact-label">Call Us</span>
+                            <span><a href="tel:08055878626">0805 587 8626</a></span>
                         </div>
                     </div>
-                    <div class="response-badge">
-                        <i class="fas fa-gem"></i>
-                        <span>Average response: <strong style="color: var(--gold);">&lt; 15 minutes</strong></span>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span class="contact-label">Email Us</span>
+                            <span><a href="mailto:mmiraculous42@gmail.com">mmiraculous42@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <span class="contact-label">WhatsApp</span>
+                            <span><a href="https://wa.me/2348055878626" target="_blank">0805 587 8626</a></span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span class="contact-label">Office</span>
+                            <span>Suite 307 Aula Plaza, Abuja, Nigeria</span>
+                        </div>
+                    </div>
+                    <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
+                        <span style="font-size:0.8rem; opacity:0.6;"><i class="fas fa-gem" style="color:var(--gold);"></i> Average response: <strong style="color:var(--gold);">&lt; 15 minutes</strong></span>
                     </div>
                 </div>
             </div>
@@ -998,13 +858,13 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>MiRaCuLoUs</h4>
-                <p style="font-size:0.85rem;">Travel · Invest · Grow</p>
-                <p style="font-size:0.8rem; margin-top:0.5rem; opacity:0.6;">Since 2025</p>
+                <p style="font-size:0.85rem; opacity:0.7;">Travel · Invest · Grow</p>
+                <p style="font-size:0.75rem; margin-top:0.3rem; opacity:0.4;">Since 2025</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
+                <a href="#services">Travels</a>
+                <a href="#services">Investment</a>
                 <a href="#about">About</a>
                 <a href="#blog">Blog</a>
             </div>
@@ -1017,25 +877,26 @@
             <div class="footer-col">
                 <h4>Connect</h4>
                 <a href="#contact">Contact Us</a>
-                <a href="#">Chat with Us</a>
+                <a href="https://wa.me/2348055878626" target="_blank">Chat on WhatsApp</a>
                 <a href="#">Press</a>
             </div>
         </div>
         <div class="copyright">Copyright &copy; 2026 MiRaCuLoUs. All rights reserved.</div>
     </footer>
 
-    <!-- Floating Elements -->
-    <div class="chat-bubble" id="chatBubble"><i class="fas fa-comment-dots"></i></div>
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/2348055878626" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
     <div class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></div>
     <div id="toastMsg" class="toast-msg">✨ Message received. We'll respond shortly.</div>
 
     <!-- "COMING SOON" MODAL -->
     <div class="modal-overlay" id="comingSoonModal">
         <div class="modal-content">
-            <span class="modal-sparkle"><i class="fas fa-sparkles"></i></span>
-            <span class="modal-sparkle"><i class="fas fa-sparkles"></i></span>
-            <span class="modal-sparkle"><i class="fas fa-sparkles"></i></span>
-            <i class="fas fa-rocket modal-icon"></i>
+            <span class="modal-icon"><i class="fas fa-rocket"></i></span>
             <h2>Coming <span>Soon!</span></h2>
             <p>We're crafting something extraordinary. This feature is under development and will be available shortly.</p>
             <button class="modal-close-btn" onclick="closeModal()">I'll Wait <i class="fas fa-heart" style="margin-left:8px;"></i></button>
@@ -1055,12 +916,8 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 40);
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - window.innerHeight;
-            const progressBar = document.getElementById('progressBar');
-            if (progressBar) progressBar.style.width = (winScroll / height) * 100 + '%';
             const backBtn = document.getElementById('backToTop');
-            backBtn.classList.toggle('show', winScroll > 300);
+            backBtn.classList.toggle('show', window.scrollY > 300);
         });
 
         // Mobile menu
@@ -1087,9 +944,6 @@
         // Back to top
         document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // Chat bubble
-        document.getElementById('chatBubble').addEventListener('click', () => showToast("💬 A concierge will connect with you in under 2 minutes."));
-
         // "Coming Soon" Modal
         function openModal() {
             document.getElementById('comingSoonModal').classList.add('active');
@@ -1099,14 +953,10 @@
             document.getElementById('comingSoonModal').classList.remove('active');
             document.body.style.overflow = '';
         }
-        // Close modal on backdrop click
         document.getElementById('comingSoonModal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) closeModal();
         });
-        // Close with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
         // Form submission
         const form = document.getElementById('contactForm');
